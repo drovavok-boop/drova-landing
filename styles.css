@@ -6207,18 +6207,6 @@ section{padding:74px 0}
   }
 }
 
-/* ===== HERO MICRO FIX ===== */
-
-/* логотип выше */
-.hero-topline{
-  align-items: start !important;
-}
-
-.hero-center-logo{
-  align-self: start !important;
-  margin-top: -22px !important;
-}
-
 /* телефон белый, hover оранжевый */
 .hero-phonebox__label{
   color: rgba(255,255,255,.78) !important;
@@ -6259,13 +6247,6 @@ section{padding:74px 0}
   }
 }
 
-/* ===== HERO ALIGN + PHONE COLOR FIX ===== */
-
-/* выравнивание в одну линию */
-.hero-topline{
-  align-items: center !important;
-}
-
 /* убираем сдвиги */
 .hero-center-logo{
   margin-top: 0 !important;
@@ -6280,23 +6261,10 @@ section{padding:74px 0}
   margin-top: 0 !important;
 }
 
-/* лёгкая оптическая корректировка логотипа */
-.hero-center-logo img{
-  transform: translateY(-6px) !important;
-}
-
 /* цвет слова "ТЕЛЕФОН" как у "СКЛАД" */
 .hero-phonebox__label{
   color: #ffb357 !important;
   letter-spacing: 0.12em !important;
-}
-
-/* ===== HERO TOP POSITION FIX ===== */
-
-/* поднимаем весь верхний блок наверх */
-.hero-topline{
-  align-items: center !important;
-  margin-top: -80px !important;
 }
 
 /* ещё точечная подстройка */
@@ -6306,10 +6274,6 @@ section{padding:74px 0}
 }
 
 /* убираем лишние сдвиги */
-.hero-center-logo{
-  margin-top: 0 !important;
-}
-
 .hero-address{
   margin-top: 0 !important;
 }
@@ -6353,11 +6317,6 @@ section{padding:74px 0}
   margin: 0 !important;
   z-index: 3 !important;
   align-items: start !important;
-}
-
-.hero-center-logo{
-  align-self: start !important;
-  margin-top: -8px !important;
 }
 
 .hero-center-logo img{
@@ -6653,123 +6612,6 @@ section{padding:74px 0}
   /* адрес чуть компактнее */
   .hero-address{
     font-size: 18px !important;
-  }
-
-}
-
-/* ===== MOBILE HEADER: PHONE INSTEAD OF ICONS ===== */
-@media (max-width: 768px){
-
-  /* скрываем иконки */
-  .header .socials,
-  .header-right .socials,
-  .header-right--final .socials,
-  .header .header-socials{
-    display: none !important;
-  }
-
-  /* шапка компактнее */
-  .header .container{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 12px !important;
-  }
-
-  /* скрываем меню ссылок, если на мобильной оно не нужно */
-  .header .nav{
-    display: none !important;
-  }
-
-  /* показываем номер */
-  .header-phone{
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 18px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-  }
-
-  .header-phone:hover{
-    color: #ffb357 !important;
-  }
-
-  /* если телефон лежит в правом блоке */
-  .header-right,
-  .header-right--final{
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-
-  /* логотип чуть компактнее */
-  .brand img,
-  .header .brand img{
-    width: 52px !important;
-    height: 52px !important;
-    object-fit: contain !important;
-  }
-
-  /* текст возле логотипа можно скрыть, если он мешает */
-  .brand span,
-  .header .brand span{
-    display: none !important;
-  }
-}
-
-/* ===== MOBILE HEADER FINAL ===== */
-@media (max-width: 768px){
-
-  .header .container{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 10px !important;
-  }
-
-  /* логотип + название */
-  .brand{
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-  }
-
-  .brand img{
-    width: 42px !important;
-    height: 42px !important;
-    object-fit: contain !important;
-  }
-
-  .brand-name{
-    display: block !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    color: #ffffff !important;
-    line-height: 1.1 !important;
-    max-width: 140px !important;
-  }
-
-  /* телефон */
-  .header-phone{
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-  }
-
-  .header-phone:hover{
-    color: #ffb357 !important;
-  }
-
-  /* убрать иконки */
-  .header .socials,
-  .header-right .socials{
-    display: none !important;
   }
 
 }
@@ -8607,7 +8449,6 @@ body.modal-open{
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url('img/hero-bg.jpg') center center / cover no-repeat;
 }
 
 .warehouse-video-card--lazy{
