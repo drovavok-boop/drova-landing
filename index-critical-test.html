@@ -6,91 +6,28 @@
   <title>Дровяная компания №1 — берёзовые дрова с замером при Вас</title>
   <meta name="description" content="Берёзовые дрова по Ленинградской области. Честный обмер рулеткой при Вас, оплата после проверки, доставка ежедневно.">
   <style>
-    :root{--container:1200px}
     *{box-sizing:border-box}
-    body{margin:0;font:16px/1.5 Arial,Helvetica,sans-serif;background:#f6f1ea;color:#36251a}
-    img,svg{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(calc(100% - 32px),var(--container));margin:0 auto}
+    body{margin:0}
+    .container{width:min(calc(100% - 32px),1200px);margin:0 auto}
 
-    .header{position:fixed;inset:0 0 auto 0;height:84px;z-index:50;background:rgba(39,26,18,.96);backdrop-filter:blur(8px);box-shadow:0 4px 18px rgba(0,0,0,.18)}
+    .header{position:fixed;inset:0 0 auto 0;height:84px;z-index:50;background:#271a12}
     .header .container{height:100%;display:flex;align-items:center;gap:20px}
-    .header.header--autohide{transform:translateY(-100%);transition:transform .32s ease,background .25s ease}
-    .header.header--autohide.is-visible{transform:translateY(0)}
-    .brand{display:flex;align-items:center;gap:10px;min-width:max-content}
-    .brand img{height:46px;width:auto;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));transition:all .35s ease}
-    .brand-name{display:block;font-weight:700;font-size:16px;color:#fff;letter-spacing:.5px;text-shadow:0 2px 10px rgba(255,140,0,.25)}
-    .nav{display:flex;justify-content:center;gap:10px;flex:1}
-    .nav a{padding:10px 12px;color:rgba(255,240,220,.72);font-weight:600}
-    .nav a:hover,.nav a.active{color:#fff}
-    .header-right,.header-right--final{display:flex;align-items:center;gap:14px}
-    .header-phone{color:#fff;font-weight:700;white-space:nowrap}
-    .socials{display:flex;gap:8px}
-    .socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.07);color:rgba(255,240,220,.84);transition:.2s}
-    .socials a:hover{transform:translateY(-2px);background:rgba(255,255,255,.11)}
-    .socials svg{width:18px;height:18px}
 
-    .hero.hero--landing{position:relative;min-height:760px;padding-top:0;display:flex;align-items:stretch;justify-content:flex-start;overflow:hidden;background:#1a0f0a;color:#fff}
-    .hero.hero--landing .hero__bg{position:absolute;inset:0;z-index:1}
-    .hero.hero--landing .hero__bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .hero__bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1}
-    .hero.hero--landing .hero__overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(14,7,4,.42) 0%,rgba(14,7,4,.28) 38%,rgba(14,7,4,.62) 100%);z-index:1}
-    .hero.hero--landing .hero__warmfade{position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(to top,rgba(116,45,12,.26),rgba(116,45,12,0));z-index:1;pointer-events:none}
-
-    .hero-topline{position:absolute;top:72px;left:50%;transform:translateX(-50%);z-index:3;width:min(1180px,calc(100% - 40px));margin:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:start;column-gap:28px}
-    .hero-address,.hero-phonebox{padding-top:-1px}
-    .hero-address{text-align:left}
-    .hero-phonebox{text-align:right}
-    .hero-address__label,.hero-phonebox__label{display:inline-block;margin-bottom:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#ffb357}
-    .hero-address p{margin:0;font-family:Georgia,serif;font-size:22px;line-height:1.22;color:#fff6ee;text-shadow:0 4px 20px rgba(0,0,0,.35)}
-    .hero-center-logo{display:flex;justify-content:center;align-self:start;margin-top:-86px}
-    .hero-center-logo img{width:min(900px,100%);max-height:280px;display:block;object-fit:contain;transform:none;filter:drop-shadow(0 14px 30px rgba(0,0,0,.30))}
-    .hero-phonebox__link{display:inline-block;font-size:30px;line-height:1.08;font-weight:700;letter-spacing:-.01em;color:#fff;text-decoration:none;text-shadow:0 4px 18px rgba(0,0,0,.28);transition:color .25s ease,transform .25s ease,text-shadow .25s ease}
-    .hero-phonebox__link:hover{color:#ffb357;transform:translateY(-2px);text-shadow:0 8px 24px rgba(255,179,87,.22)}
-
+    .hero.hero--landing{position:relative;min-height:760px;display:flex;align-items:stretch;justify-content:flex-start;overflow:hidden}
+    .hero-topline{position:absolute;top:72px;left:50%;transform:translateX(-50%);z-index:3;width:min(1180px,calc(100% - 40px));margin:0;display:grid;grid-template-columns:1fr auto 1fr;column-gap:28px;align-items:start}
     .hero-navtiles{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:3;width:min(1180px,calc(100% - 40px));display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
-    .hero-navtile{min-height:178px;padding:22px 16px 18px;border-radius:28px;background:linear-gradient(180deg,rgba(255,252,249,.98),rgba(246,238,232,.98));border:1px solid rgba(222,123,75,.10);box-shadow:0 18px 40px rgba(18,8,4,.18),inset 0 1px 0 rgba(255,255,255,.88);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease,background .28s ease}
-    .hero-navtile::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(to top,rgba(226,121,66,.10),rgba(226,121,66,0));opacity:.75;pointer-events:none}
-    .hero-navtile:hover{transform:translateY(-7px);border-color:rgba(222,123,75,.24);box-shadow:0 26px 54px rgba(18,8,4,.24),inset 0 1px 0 rgba(255,255,255,.92)}
-    .hero-navtile__icon{width:72px;height:72px;border-radius:22px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f8ece1,#f2dfd2);color:#de7b4b;box-shadow:inset 0 0 0 1px rgba(222,123,75,.08),0 8px 18px rgba(222,123,75,.10);transition:transform .28s ease,background .28s ease,color .28s ease,box-shadow .28s ease}
-    .hero-navtile__icon svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-    .hero-navtile__title{font-size:18px;line-height:1.18;font-weight:700;color:#312019;transition:color .28s ease}
-    .hero-navtile__sub{font-size:13px;line-height:1.35;color:#8e6d5d;transition:color .28s ease}
 
     @media (max-width:1280px){
       .hero.hero--landing{min-height:45vh}
-      .hero-topline{position:absolute;top:56px;left:50%;transform:translateX(-50%);width:min(100%,calc(100% - 32px));grid-template-columns:1fr;row-gap:18px;text-align:center}
-      .hero-address,.hero-phonebox{text-align:center;padding-top:0}
-      .hero-center-logo{margin-top:-10px}
-      .hero-center-logo img{width:min(720px,92%);max-height:220px}
-      .hero-phonebox{margin-top:10px}
-      .hero-phonebox__link{font-size:34px}
+      .hero-topline{top:56px;width:min(100%,calc(100% - 32px));grid-template-columns:1fr;row-gap:18px;text-align:center}
       .hero-navtiles{display:none}
-      .hero-address{font-size:18px}
     }
 
     @media (max-width:768px){
-      .header{padding:10px 0;backdrop-filter:blur(8px)}
-      .header .container{display:flex;align-items:center;justify-content:space-between;gap:10px}
-      .brand{display:flex;align-items:center;gap:8px;min-width:0}
-      .brand img{width:40px;height:40px;flex:0 0 40px;object-fit:contain;display:block}
-      .brand-name{display:block;color:#fff;font-size:14px;font-weight:700;line-height:1;letter-spacing:.02em;white-space:nowrap;margin-left:0;text-shadow:0 2px 8px rgba(255,140,0,.18)}
-      .header-phone{display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;line-height:1;color:#fff;text-decoration:none;white-space:nowrap;flex-shrink:0}
-      .nav,.socials,.header .socials,.header-right .socials,.header-right--final .socials{display:none}
-
-      .hero.hero--landing{min-height:75vh;padding:0;display:block;position:relative}
+      .header .container{justify-content:space-between;gap:10px}
+      .hero.hero--landing{min-height:75vh;display:block}
       .hero-topline{position:relative;top:auto;left:auto;transform:none;width:calc(100% - 32px);margin:0 auto;padding-top:28px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;row-gap:18px}
-      .hero-address,.hero-phonebox,.hero-center-logo{margin:0;padding:0;align-self:center;text-align:center}
-      .hero-address{order:1}
-      .hero-center-logo{order:2;margin-top:0;align-self:center}
-      .hero-phonebox{order:3;margin-top:4px}
-      .hero-address__label,.hero-phonebox__label{display:block;margin:0 0 8px;font-size:12px;line-height:1.2;letter-spacing:.12em;color:#ffb357;opacity:1}
-      .hero-address p{margin:0;font-size:18px;line-height:1.2;color:#fff}
-      .hero-center-logo img{width:min(430px,92vw);max-height:none;margin:0 auto;display:block;transform:none}
-      .hero-phonebox__link{display:inline-block;margin:0;font-size:22px;line-height:1.1;font-weight:700;color:#fff;text-shadow:0 4px 16px rgba(0,0,0,.28)}
       .hero-navtiles{display:none}
-      .hero__overlay{background:linear-gradient(to bottom,rgba(0,0,0,.52) 0%,rgba(0,0,0,.42) 38%,rgba(20,10,5,.64) 100%)}
-      .hero__warmfade{height:110px}
     }
   </style>
   <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -148,9 +85,7 @@
   </header>
 
 <section class="hero hero--landing" id="hero">
-<div class="hero__bg">
-  <img class="hero__bg-img" src="img/hero-bg.jpg" alt="" fetchpriority="high" decoding="async">
-</div>
+<div class="hero__bg"></div>
   <div class="hero__overlay"></div>
   <div class="hero__warmfade"></div>
 
@@ -1983,52 +1918,11 @@ document.addEventListener('DOMContentLoaded', function () {
   a[o]=a[o]||function(){
     (a[o].q=a[o].q||[]).push(arguments);
   };
-  var d = a.document;
-  var scriptLoaded = false;
-  var listenersBound = false;
-  var scriptId = m + '_script';
-  var passiveOpts = { passive: true };
-
-  function loadAmoCrmScriptOnce() {
-    if (scriptLoaded) return;
-    if (d.getElementById(scriptId)) {
-      scriptLoaded = true;
-      return;
-    }
-    scriptLoaded = true;
-    var s = d.createElement('script');
-    s.async = true;
-    s.id = scriptId;
-    s.src = 'https://gso.amocrm.ru/js/button.js';
-    d.head && d.head.appendChild(s);
-    cleanupInteractionListeners();
-  }
-
-  function cleanupInteractionListeners() {
-    if (!listenersBound) return;
-    listenersBound = false;
-    a.removeEventListener('click', loadAmoCrmScriptOnce, true);
-    a.removeEventListener('scroll', loadAmoCrmScriptOnce, passiveOpts);
-    a.removeEventListener('touchstart', loadAmoCrmScriptOnce, passiveOpts);
-  }
-
-  function bindInteractionListeners() {
-    if (listenersBound) return;
-    listenersBound = true;
-    a.addEventListener('click', loadAmoCrmScriptOnce, true);
-    a.addEventListener('scroll', loadAmoCrmScriptOnce, passiveOpts);
-    a.addEventListener('touchstart', loadAmoCrmScriptOnce, passiveOpts);
-  }
-
-  bindInteractionListeners();
-
-  if ('requestIdleCallback' in a) {
-    a.requestIdleCallback(function() {
-      loadAmoCrmScriptOnce();
-    }, { timeout: 5000 });
-  } else {
-    a.setTimeout(loadAmoCrmScriptOnce, 5000);
-  }
+  var d=a.document,s=d.createElement('script');
+  s.async=true;
+  s.id=m+'_script';
+  s.src='https://gso.amocrm.ru/js/button.js';
+  d.head&&d.head.appendChild(s);
 })(window,0,'amoSocialButton',0,0,'amo_social_button');
 </script>
 
